@@ -1,5 +1,5 @@
 from Thread_manager import protr
-async def funct():
+def funct():
   print('hello world!')
 
 protr(funct)
