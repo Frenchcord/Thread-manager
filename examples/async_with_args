@@ -1,0 +1,5 @@
+from Thread_manager import async_thread
+async def funct(to_print: str):
+  print(to_prin)
+
+async_thread(funct, 'hello world!')
