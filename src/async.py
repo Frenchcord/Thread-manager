@@ -1,14 +1,11 @@
-import asyncio
+from asyncio import run
 from threading import Thread
 def async_thread(func, args = None):
   def he(arg = None):
     if arg is None:
-      asyncio.run(func)
+      run(func())
       return
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    loop.run_until_complete(func(arg))
-    loop.close()
+    run(func(args))
   if args is None:
     thread = Thread(target=he)
   else:
